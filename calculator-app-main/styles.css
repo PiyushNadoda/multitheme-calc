@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root{
+    /* theme 1 */
+    --theme1-main-background: hsl(222, 26%, 31%);
+    --theme1-keypad-background: hsl(223, 31%, 20%);
+    --theme1-screen-background: hsl(224, 36%, 15%);
+    --theme1-key-background-blue: hsl(225, 21%, 49%);
+    --theme1-key-shadow-blue:  hsl(224, 28%, 35%);
+    --theme1-key-background-red: hsl(6, 63%, 50%);
+    --theme1-key-shadow-red: hsl(6, 70%, 34%);
+    --theme1-key-background-orange: hsl(30, 25%, 89%);
+    --theme1-key-shadow-orange: hsl(28, 16%, 65%);
+    --theme1-text-blue: hsl(221, 14%, 31%);
+    --text-white: hsl(0, 0, 100%);
+
+    /* theme 2 */
+    --theme2-main-background: hsl(0, 0%, 90%);
+    --theme2-keypad-background: hsl(0, 5%, 81%);
+    --theme2-screen-background:  hsl(0, 0%, 93%);
+    --theme2-key-background-cyan: hsl(185, 42%, 37%);
+    --theme2-key-shadow-cyan:  hsl(185, 58%, 25%);
+    --theme2-key-background-orange: hsl(25, 98%, 40%);
+    --theme2-key-shadow-orange: hsl(25, 99%, 27%);
+    --theme2-key-background-yellow: hsl(45, 7%, 89%);
+    --theme2-key-shadow-yellow: hsl(35, 11%, 61%);
+    --theme2-text-orange: hsl(60, 10%, 19%);
+
+    /* theme 3 */
+    --theme3-main-background: hsl(268, 75%, 9%);
+    --theme3-keypad-background: hsl(268, 71%, 12%);
+    --theme3-screen-background:  hsl(268, 71%, 12%);
+    --theme3-key-background-violet: hsl(281, 89%, 26%);
+    --theme3-key-shadow-violet:  hsl(285, 91%, 52%);
+    --theme3-key-background-cyan: hsl(176, 100%, 44%);
+    --theme3-key-shadow-cyan:  hsl(177, 92%, 70%);
+    --theme3-key-background-dark-violet: hsl(268, 47%, 21%);
+    --theme3-key-shadow-dark-violet: hsl(290, 70%, 36%);
+    --theme3-text-yellow: hsl(52, 100%, 62%);
+    --theme3-text-blue: hsl(198, 20%, 13%);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   styling                                  */
+/* -------------------------------------------------------------------------- */
+
+
+*{
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+    transition: all .1s;
+}
+
+body{
+    width: 98vw;
+}
+
+.calculator{
+    max-width: 500px;
+    margin: auto;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.calc{
+    align-self: flex-end;
+}
+
+.theme-switcher{
+    display: flex;
+    height: 60px;
+}
+
+.theme{
+    text-transform: uppercase;
+    font-size: 11px;
+    align-self: flex-end;
+    padding:3px 10px;
+}
+
+.theme-number-container span:nth-child(2){
+    padding: 0px 2px;
+    font-size: 11px;
+}
+
+.theme-number-container span:nth-child(1){
+    padding: 0;
+    padding-left: 6px;
+    font-size: 11px;
+}
+
+.theme-number-container span:nth-child(3){
+    padding: 0;
+    padding-right: 5px;
+    font-size: 11px;
+}
+
+.toggle-button-container {
+    width: 60px;
+    height: 20px;
+    border-radius: 15px;
+    padding: 3px;
+    position: relative;
+    zoom: 80%;
+  }
+  
+.toggle-button {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    top: 4px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.input-area{
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    height: 120px;
+    font-size: 1.75rem;
+    padding: 10px 30px 5px;
+    text-align: end;
+}
+
+.mid{
+    position: relative;
+}
+
+.input-area:focus-visible{
+    outline: none;
+}
+
+.button-container{
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+}
+
+td{
+    height: 80px;
+    width: 70px;
+    padding: 10px 0;
+    background: none;
+    box-sizing: border-box;
+}
+
+button{
+    height: 100%;
+    width: 80%;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: all 1s;
+    box-sizing: border-box;
+}
+
+.del, .reset{
+    font-size: 0.7rem;
+}
+
+.equal{
+    font-size: 0.7rem;
+}
+
+.equal, .reset{
+    width: 90%;
+}
+
+button:active{
+    border: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   theme1                                   */
+/* -------------------------------------------------------------------------- */
+
+
+
+body.theme1{
+    background: var(--theme1-main-background);
+    color: #fff;
+}
+
+.toggle-button-container.theme1{
+    background-color: var(--theme1-keypad-background);
+}
+
+.toggle-button.theme1{
+    background-color: var(--theme1-key-background-red);
+}
+
+.input-area.theme1{
+    background: var(--theme1-screen-background);
+    color: #fff
+}
+
+.button-container.theme1{
+    background-color: var(--theme1-keypad-background);
+}
+
+button.theme1{
+    background-color: var(--theme1-key-background-orange);
+    color: var(--theme1-text-blue);
+    border-bottom: 5px solid Var(--theme1-key-shadow-orange);
+}
+
+
+.reset.theme1, .del.theme1{
+    background-color: var(--theme1-key-background-blue);
+    color: #fff;
+    border-bottom: 5px solid Var(--theme1-key-shadow-blue);
+}
+
+.equal.theme1{
+    background-color: var(--theme1-key-background-red);
+    color: #fff;
+    border-bottom: 5px solid Var(--theme1-key-shadow-red);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   theme2                                   */
+/* -------------------------------------------------------------------------- */
+
+body.theme2{
+    background: var(--theme2-main-background);
+    color: var(--theme2-text-orange);
+}
+
+.toggle-button-container.theme2{
+    background-color: var(--theme2-keypad-background);
+}
+
+.toggle-button.theme2{
+    background-color: var(--theme2-key-background-orange);
+}
+
+.input-area.theme2{
+    background: var(--theme2-screen-background);
+}
+
+.button-container.theme2{
+    background-color: var(--theme2-keypad-background);
+}
+
+button.theme2{
+    background-color: var(--theme2-key-background-yellow);
+    color: var(--theme2-text-orange);
+    border-bottom: 5px solid Var(--theme2-key-shadow-yellow);
+}
+
+
+.reset.theme2, .del.theme2{
+    background-color: var(--theme2-key-background-cyan);
+    color: #fff;
+    border-bottom: 5px solid Var(--theme2-key-shadow-cyan);
+}
+
+.equal.theme2{
+    background-color: var(--theme2-key-background-orange);
+    border-bottom: 5px solid Var(--theme2-key-shadow-orange);
+    color: #fff;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   theme 3                                  */
+/* -------------------------------------------------------------------------- */
+
+
+body.theme3{
+    background: var(--theme3-main-background);
+    color: var(--theme3-text-yellow);
+}
+
+.toggle-button-container.theme3{
+    background-color: var(--theme3-keypad-background);
+}
+
+.toggle-button.theme3{
+    background-color: var(--theme3-key-background-cyan);
+}
+
+.input-area.theme3{
+    background: var(--theme3-screen-background);
+    color: var(--theme3-text-yellow);
+}
+
+.button-container.theme3{
+    background-color: var(--theme3-keypad-background);
+}
+
+button.theme3{
+    background-color: var(--theme3-key-background-dark-violet);
+    color: var(--theme3-text-yellow);
+    border-bottom: 5px solid Var(--theme3-key-shadow-dark-violet);
+}
+
+
+.reset.theme3, .del.theme3{
+    background-color: var(--theme3-key-background-violet);
+    color: #fff;
+    border-bottom: 5px solid Var(--theme3-key-shadow-violet);
+}
+
+.equal.theme3{
+    background-color: var(--theme3-key-background-cyan);
+    color: var(--theme3-text-blue);
+    border-bottom: 5px solid Var(--theme3-key-shadow-cyan);
+}
