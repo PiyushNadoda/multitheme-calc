@@ -53,8 +53,11 @@ var inputVal = document.querySelector('.input-area')
 
 inputVal.after.value = 5;
 
+var canUseDecimal = true;
+
+
 function buttonClick(e){
-  if(inputVal.value == 0){
+  if(inputVal.value == 0 && !inputVal.value.includes(".")){
     inputVal.value = e.target.innerHTML;
     console.log(e.target);
   } else{
@@ -63,12 +66,10 @@ function buttonClick(e){
 }
 
 function buttonClickMult(e){
-  if(inputVal.value == 0){
-    inputVal.value = e.target.value;
-    console.log(e.target);
-  } else{
+  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.value)){
     inputVal.value += e.target.value;
-  }
+  canUseDecimal = true;
+}
 }
 
 
@@ -87,5 +88,23 @@ function deleteVal(){
 
 function getSum(){
   inputVal.value = eval(inputVal.value);
+  canUseDecimal = true;
 }
  
+function addDecimalPoint(e){
+  if(canUseDecimal){
+    inputVal.value += e.target.innerHTML;
+    canUseDecimal = false;
+  }
+}
+function buttonZero(e){
+  if(inputVal.value.includes(".") || inputVal.value != 0){
+    inputVal.value += e.target.innerHTML;
+  }
+}
+
+function operatorButton(e){
+  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.innerHTML)){
+    inputVal.value += e.target.innerHTML;
+    canUseDecimal = true;
+  }}
