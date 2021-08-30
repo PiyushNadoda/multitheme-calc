@@ -181,17 +181,6 @@ button{
     width: 90%;
 }
 
-button:active{
-    border: none;
-}
-
-button:focus-visible{
-    outline: none;
-}
-
-.input-area:focus-visible{
-    outline: none;
-}
 /* -------------------------------------------------------------------------- */
 /*                                   theme1                                   */
 /* -------------------------------------------------------------------------- */
@@ -328,4 +317,18 @@ button.theme3{
     background-color: var(--theme3-key-background-cyan);
     color: var(--theme3-text-blue);
     border-bottom: 5px solid Var(--theme3-key-shadow-cyan);
+}
+
+
+
+button:active{
+    border: none  !important;
+}
+
+button:focus-visible{
+    outline: none  !important;
+}
+
+.input-area:focus-visible{
+    outline: none  !important;
 }
