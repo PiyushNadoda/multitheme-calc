@@ -55,20 +55,24 @@ inputVal.after.value = 5;
 
 var canUseDecimal = true;
 
+var isThereOprator = false;
 
 function buttonClick(e){
   if(inputVal.value == 0 && !inputVal.value.includes(".")){
     inputVal.value = e.target.innerHTML;
     console.log(e.target);
+    isThereOprator = false;
   } else{
     inputVal.value += e.target.innerHTML;
+    isThereOprator = false;
   }
 }
 
 function buttonClickMult(e){
-  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.value)){
+  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.value) && !isThereOprator){
     inputVal.value += e.target.value;
-  canUseDecimal = true;
+    canUseDecimal = true;
+    isThereOprator = true;
 }
 }
 
@@ -76,6 +80,8 @@ function buttonClickMult(e){
 
 function resetVal(){
   inputVal.value = 0;
+  isThereOprator = false;
+  canUseDecimal = true;
 }
 
 function deleteVal(){
@@ -88,6 +94,7 @@ function deleteVal(){
 
 function getSum(){
   inputVal.value = eval(inputVal.value);
+  isThereOprator = false;
   canUseDecimal = true;
 }
  
@@ -100,11 +107,13 @@ function addDecimalPoint(e){
 function buttonZero(e){
   if(inputVal.value.includes(".") || inputVal.value != 0){
     inputVal.value += e.target.innerHTML;
+    isThereOprator = false;
   }
 }
 
 function operatorButton(e){
-  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.innerHTML)){
+  if(!(inputVal.value.charAt(inputVal.value.length - 1) == e.target.innerHTML) && !isThereOprator){
     inputVal.value += e.target.innerHTML;
     canUseDecimal = true;
+    isThereOprator =  true;
   }}
